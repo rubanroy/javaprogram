@@ -1,5 +1,0 @@
-# javaprogram
-
-* Java
-* Spring
-* SpringBoot
