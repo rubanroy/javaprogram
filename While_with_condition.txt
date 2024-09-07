@@ -1,0 +1,66 @@
+int x = 100;
+
+	int y = 300;
+
+	while (++x < --y) {
+	//	System.out.println("Hello");
+	}
+	System.out.println(x);
+	System.out.println(y);
+	
+Explanation:
+Initial Values:
+
+x is initialized to 100.
+y is initialized to 300.
+while Loop Condition:
+
+The while loop condition is ++x < --y.
+++x increments x by 1 and then evaluates the new value.
+--y decrements y by 1 and then evaluates the new value.
+Iteration Process:
+
+On each iteration of the loop:
+x is incremented (++x).
+y is decremented (--y).
+The loop continues to execute as long as the condition ++x < --y holds true.
+Detailed Iteration:
+First Iteration:
+
+Before iteration: x = 100, y = 300
+After ++x: x becomes 101
+After --y: y becomes 299
+Condition 101 < 299 is true, so the loop body executes.
+Second Iteration:
+
+Before iteration: x = 101, y = 299
+After ++x: x becomes 102
+After --y: y becomes 298
+Condition 102 < 298 is true, so the loop body executes.
+Subsequent Iterations:
+
+This process continues with x increasing and y decreasing.
+Termination:
+
+The loop will terminate when ++x is no longer less than --y.
+Finding the Termination Point:
+Let’s compute when ++x is no longer less than --y:
+
+After n iterations:
+x will be 100 + n
+y will be 300 - n
+The condition to check is 100 + n < 300 - n
+Simplifying, 2n < 200
+Thus, n < 100
+So, the loop will terminate after n = 99 iterations.
+
+Final Values:
+At the end of the loop:
+x = 100 + 99 = 199
+y = 300 - 99 = 201
+After the final increment and decrement:
+++x will be 200
+--y will be 200
+The loop condition 200 < 200 is false.
+Summary:
+The while loop will run 99 times. After the loop terminates, x will be 200 and y will be 200.
