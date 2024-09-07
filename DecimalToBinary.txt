@@ -1,0 +1,41 @@
+
+class DecimalToBinary {
+public static void main (Sring [] args) {
+int a = 3;
+int b = 6;
+int result = (~a & b) | (a & ~b);
+System.out.println(result);
+}
+}
+ 
+
+
+Breakdown:
+Initialization:
+
+a = 3 in binary is 0011 (assuming 4-bit for simplicity).
+b = 6 in binary is 0110.
+Bitwise NOT Operation:
+
+~a flips all the bits of a. For a 32-bit integer, ~3 is -4 (in binary: 11111111 11111111 11111111 11111100).
+~b flips all the bits of b. For a 32-bit integer, ~6 is -7 (in binary: 11111111 11111111 11111111 11111001).
+Bitwise AND Operation:
+
+~a & b: This performs a bitwise AND between ~a and b.
+
+~a = -4 (11111111 11111111 11111111 11111100).
+b = 6 (00000000 00000000 00000000 00000110).
+Performing ~a & b results in 00000000 00000000 00000000 00000100 (binary), which is 4 in decimal.
+a & ~b: This performs a bitwise AND between a and ~b.
+
+a = 3 (00000000 00000000 00000000 00000011).
+~b = -7 (11111111 11111111 11111111 11111001).
+Performing a & ~b results in 00000000 00000000 00000000 00000001 (binary), which is 1 in decimal.
+Bitwise OR Operation:
+
+result = (~a & b) | (a & ~b): This combines the results of the previous AND operations with a bitwise OR.
+~a & b = 4 (00000000 00000000 00000000 00000100).
+a & ~b = 1 (00000000 00000000 00000000 00000001).
+Performing 4 | 1 results in 00000000 00000000 00000000 00000101 (binary), which is 5 in decimal.
+Output:
+The System.out.println(result); statement will print the value of result, which is 5.
