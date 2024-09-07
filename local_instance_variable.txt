@@ -1,0 +1,38 @@
+## local variable hides the instance variable
+
+When a local variable has the same name as an instance variable within a class, the local variable takes precedence within its scope. This means that within the block of code where the local variable is defined (like inside a method), the local variable will hide the instance variable.
+
+Here's a simple example to illustrate this:
+
+public class VariableExample {
+    // Instance variable
+    int value = 10;
+
+    public void printValue() {
+        // Local variable with the same name as the instance variable
+        int value = 20;
+        
+        // Prints the value of the local variable
+        System.out.println("Local variable value: " + value);
+        
+        // To access the instance variable, use the `this` keyword
+        System.out.println("Instance variable value: " + this.value);
+    }
+
+    public static void main(String[] args) {
+        VariableExample example = new VariableExample();
+        example.printValue();
+    }
+}
+
+Output:
+
+Local variable value: 20
+Instance variable value: 10
+
+Explanation:
+Local Variable (value inside printValue method): This value shadows the instance variable with the same name. Within the method, the reference to value will always refer to this local variable.
+
+Instance Variable (value in the class): This value is hidden by the local variable. To access it from within the method, you use this.value, which explicitly refers to the instance variable.
+
+In summary, if a local variable has the same name as an instance variable, the local variable will be used within its scope. To access the instance variable, you can use the this keyword.
